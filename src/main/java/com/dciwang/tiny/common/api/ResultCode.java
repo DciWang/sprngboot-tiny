@@ -1,13 +1,10 @@
 package com.dciwang.tiny.common.api;
 
 /**
- * @Author DciWang
- * @Description TODO 枚举了一些常用API操作码
- * @Date 2020/8/18 下午4:51
- * @Version 1.0
+ * 枚举了一些常用API操作码
+ * Created by macro on 2019/4/19.
  */
-
-public enum ResultCode  implements IErrorCode{
+public enum ResultCode implements IErrorCode {
     SUCCESS(200, "操作成功"),
     FAILED(500, "操作失败"),
     VALIDATE_FAILED(404, "参数检验失败"),
@@ -16,28 +13,16 @@ public enum ResultCode  implements IErrorCode{
     private long code;
     private String message;
 
-    ResultCode(long code, String message) {
+    private ResultCode(long code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public void setCode(long code) {
-        this.code = code;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    @Override
-    public Long getCode() {
+    public long getCode() {
         return code;
     }
 
-    @Override
     public String getMessage() {
         return message;
     }
-
-
 }

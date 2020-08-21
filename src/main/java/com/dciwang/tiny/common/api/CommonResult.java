@@ -1,29 +1,22 @@
 package com.dciwang.tiny.common.api;
 
 /**
- * @Author DciWang
- * @Description TODO
- * @Date 2020/8/18 下午4:54
- * @Version 1.0
+ * 通用返回对象
+ * Created by macro on 2019/4/19.
  */
-
 public class CommonResult<T> {
     private long code;
     private String message;
     private T data;
 
-
-    public CommonResult() {
+    protected CommonResult() {
     }
 
-    ;
-
-    public CommonResult(long code, String message, T data) {
+    protected CommonResult(long code, String message, T data) {
         this.code = code;
         this.message = message;
         this.data = data;
     }
-
 
     /**
      * 成功返回结果
@@ -37,8 +30,8 @@ public class CommonResult<T> {
     /**
      * 成功返回结果
      *
-     * @param data    获取的数据
-     * @param message 提示信息
+     * @param data 获取的数据
+     * @param  message 提示信息
      */
     public static <T> CommonResult<T> success(T data, String message) {
         return new CommonResult<T>(ResultCode.SUCCESS.getCode(), message, data);
@@ -46,7 +39,6 @@ public class CommonResult<T> {
 
     /**
      * 失败返回结果
-     *
      * @param errorCode 错误码
      */
     public static <T> CommonResult<T> failed(IErrorCode errorCode) {
@@ -55,7 +47,6 @@ public class CommonResult<T> {
 
     /**
      * 失败返回结果
-     *
      * @param message 提示信息
      */
     public static <T> CommonResult<T> failed(String message) {
@@ -78,7 +69,6 @@ public class CommonResult<T> {
 
     /**
      * 参数验证失败返回结果
-     *
      * @param message 提示信息
      */
     public static <T> CommonResult<T> validateFailed(String message) {

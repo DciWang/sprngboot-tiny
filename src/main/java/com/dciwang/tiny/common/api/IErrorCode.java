@@ -1,14 +1,11 @@
 package com.dciwang.tiny.common.api;
 
 /**
- * @Author DciWang
- * @Description TODO
- * @Date 2020/8/18 下午4:49
- * @Version 1.0
+ * 封装API的错误码
+ * Created by macro on 2019/4/19.
  */
-
 public interface IErrorCode {
-    Long getCode();
+    long getCode();
 
     String getMessage();
 }
